@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: localhost
+    # 心跳检测检测与续约时间
+    lease-renewal-interval-in-seconds: 5
+    # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+    lease-expiration-duration-in-seconds: 10
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #关闭 Eureka 的自我保护模式(生产请打开)
+    enable-self-preservation: false
+    #eureka server清理无效节点的时间间隔，默认60000毫秒，即60秒
+    eviction-interval-timer-in-ms: 10000

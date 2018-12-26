@@ -1,0 +1,19 @@
+eureka:
+  instance:
+    hostname: localhost
+    # 心跳检测检测与续约时间
+    lease-renewal-interval-in-seconds: 5
+    # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+
+feign:
+  hystrix:
+    #打开容错保护开关
+    enabled: true
+
+
+

@@ -1,0 +1,13 @@
+server:
+  port: ${SERVER_PORT:5200}
+spring:
+  application:
+    name: swallow-gateway
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 10000
+    password:
+
+
